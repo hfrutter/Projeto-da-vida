@@ -1,6 +1,7 @@
 var mysql = require('mysql')
 
-var con = mysql.createConnection({
+var con = mysql.createConnection(
+{
     host: "localhost",
     user: "root",
     password: "",
@@ -11,7 +12,8 @@ var con = mysql.createConnection({
     //function adicionarCliente(id, nome, compras, telefone, endereco)
     
 
-    con.connect(function(erroCon) {
+    con.connect(function(erroCon) 
+    {
         if (erroCon) throw erroCon;
         console.log("Conectado ao Banco de dados!");
         var sql = "CREATE TABLE clientes (id INT AUTO_INCREMENT PRIMARY KEY, nome VARCHAR(255), endereco VARCHAR(255), compras INT, telefone VARCHAR(255))";
@@ -19,4 +21,4 @@ var con = mysql.createConnection({
           if (erroCon) throw erroCon;
           console.log("Tabela criada com sucesso");
         });
-      });
+    });
